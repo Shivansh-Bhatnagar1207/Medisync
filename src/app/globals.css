@@ -1,0 +1,276 @@
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("/homepage.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.carts {
+  cursor: pointer;
+font-size: 36px;
+}
+
+.dashboard-bg {
+  background-image: url("/homepage.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.form-container,
+.dashboard-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2em;
+  border-radius: 10px;
+  margin: 5% auto;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input,
+button {
+  margin-top: 1em;
+  padding: 0.5em;
+  width: 90%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #4caf50;
+  color: white;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin: 1em;
+  padding: 1em;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+select {
+  width: 90%;
+  padding: 0.5em;
+  margin-top: 1em;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.search-bar {
+  position: absolute;
+  top: 80px; /* Adjusted position */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.search-bar input[type="text"] {
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.search-bar button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px;
+  width: 70px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+  background-color: #96a597;
+}
+
+#logo {
+  clip-path: circle(50% at 50% 50%);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+
+#logo:hover {
+  transform: scale(0.5) rotate(-30deg);
+}
+
+#greet {
+  margin-top: 140px;
+  font-size: 4em;
+  line-height: 1.5;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  b {
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    color: #45a049;
+    font-weight: bolder;
+    text-decoration: overline;
+  }
+}
+
+.info-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
+  font-size: 1.2em;
+  opacity: 1;
+  transform: translateY(30px);
+  transition: opacity 0.5ms ease-in, transform 0.5ms ease-in-out;
+  text-align: justify;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 5px;
+  width: 70px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+  background-color: #3d76d9;
+  transform: scale(1.13);
+}
+
+.medicine-list {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: space-around; /* Space between cards */
+  margin: 20px 0; /* Margin around the medicine list */
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
+  }
+  button:hover {
+    background-color: #96a597;
+  }
+}
+
+.medicine-card {
+  background-color: rgba(255, 255, 255, 0.9); /* Card background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  margin: 10px; /* Space between cards */
+  padding: 15px; /* Inner padding */
+  text-align: center; /* Centered text */
+  width: 200px; /* Fixed width for cards */
+  transition: transform 0.3s; /* Animation for hover effect */
+}
+
+.medicine-card img {
+  max-width: 100%; /* Responsive image */
+  border-radius: 5px; /* Rounded image corners */
+}
+
+.medicine-card button {
+  margin-top: 10px; /* Space above button */
+  background-color: #4caf50; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  padding: 10px; /* Button padding */
+  border-radius: 5px; /* Rounded button corners */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.medicine-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+.contact-container {
+  background-color: #96a597b3;
+  border-radius: 10px;
+}
+
+.form-control {
+  width: 50%;
+}
+
+button.submit {
+  background-color: #4caf50;
+  color: #fff;
+  width: 100px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000; /* Ensure it appears above other content */
+  transition: opacity 0.5s ease;
+}
+
+button#googleSignIn {
+  width: 150px;
+  padding: 10px;
+  align-content: center;
+  border-radius: 20% 20%;
+}
+
+button#googleSignIn:hover {
+  background-color: #3d76d9;
+  transform: scale(1.5);
+}
