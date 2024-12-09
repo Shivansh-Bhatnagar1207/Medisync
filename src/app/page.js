@@ -4,23 +4,12 @@
 import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import Link from "next/link";
+import ProductList from "./components/ProductList";
+import { Suspense } from "react";
 // import { useContext, useEffect } from "react";
 export default async function Home() {
-  const wixClient = await wixClientServer(); // Await the wixClientServer function
-  
-
-
-
-  // const wixClient = useWixClient()
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-  //     const res = await wixClient.products.queryProducts().find()
-  //     console.log(res);
-
-  //   }
-  //   getProducts()
-  // }, [wixClient])
+  // const wixClient = await wixClientServer(); // Await the wixClientServer function
+  // const res = await wixClient.products.queryProducts().find()
 
   return (
     <>
@@ -47,8 +36,7 @@ export default async function Home() {
       </div>
       <section className="featured-medicines">
         <h2>Featured Medicines</h2>
-        <div className="medicine-list">
-          <div className="medicine-card">
+        {/* <div className="medicine-card">
             <Image src="/img/Advil.jpeg" alt="Advil" width={200} height={200} />
             <h3>Advil</h3>
             <p> ₹10.00</p>
@@ -89,8 +77,11 @@ export default async function Home() {
             <p> ₹7.00</p>
             <button className="add-to-cart" >Add to Cart</button>
             <button >Buy Now</button>
-          </div>
-        </div>
+          </div> */}
+        <Suspense fallback={'Loading'}>
+          <ProductList categoryId={process.env.CATEGORY_ID} limit={4} />
+        </Suspense>
+
       </section>
 
 

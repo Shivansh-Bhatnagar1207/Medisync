@@ -1,36 +1,32 @@
 import { OAuthStrategy, createClient } from "@wix/sdk";
 import { collections, products } from "@wix/stores";
+// import { orders } from "@wix/ecom";
 import { cookies } from "next/headers";
+// import { members } from '@wix/members';
 
 export const wixClientServer = async () => {
+  let refreshToken;
+
   try {
     const cookieStore = cookies();
-    const refreshTokenCookie = cookieStore.get("refreshToken")?.value;
+    refreshToken = JSON.parse(cookieStore.get("refreshToken")?.value || "{}");
+  } catch (e) {}
 
-    if (!refreshTokenCookie) {
-      console.warn("Refresh token not found in cookies.");
-      return null;
-    }
-
-    const refreshToken = JSON.parse(refreshTokenCookie);
-
-    const wixClient = createClient({
-      modules: {
-        products,
-        collections,
+  const wixClient = createClient({
+    modules: {
+      products,
+      collections,
+      // orders,
+      // members,
+    },
+    auth: OAuthStrategy({
+      clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
+      tokens: {
+        refreshToken,
+        accessToken: { value: "", expiresAt: 0 },
       },
-      auth: OAuthStrategy({
-        clientId: process.env.NEXT_PUBLIC_WIX_CLIENT_ID,
-        tokens: {
-          refreshToken,
-          accessToken: { value: "", expiresAt: 0 },
-        },
-      }),
-    });
+    }),
+  });
 
-    return wixClient;
-  } catch (error) {
-    console.error("Error initializing Wix client:", error);
-    throw new Error("Failed to initialize Wix client.");
-  }
+  return wixClient;
 };
