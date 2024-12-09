@@ -1,19 +1,26 @@
-'use client'
+// 'use client'
 
-import { WixClientContext } from "@/contexts/WixContext";
+// import { useWixClient } from "@/hooks/WixClient";
+import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
-export default function Home() {
-  const wixClient = useContext(WixClientContext)
+// import { useContext, useEffect } from "react";
+export default async function Home() {
+  const wixClient = await wixClientServer(); // Await the wixClientServer function
+  
 
-  useEffect(() => {
-    const getProducts = async () => {
-      const res = await wixClient.products.queryProducts().find()
 
-    }
-    getProducts()
-  }, [wixClient])
+
+  // const wixClient = useWixClient()
+
+  // useEffect(() => {
+  //   const getProducts = async () => {
+  //     const res = await wixClient.products.queryProducts().find()
+  //     console.log(res);
+
+  //   }
+  //   getProducts()
+  // }, [wixClient])
 
   return (
     <>
