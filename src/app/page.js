@@ -1,10 +1,8 @@
 'use client'
 
 import Image from "next/image";
-import { UserButton, SignInButton, SignOutButton, useUser } from '@clerk/nextjs'
 import Link from "next/link";
 export default function Home() {
-  const { isLoaded, user, isSignedIn } = useUser()
   return (
     <>
       <Image id="logo" src="/medlogo.png" width="100" height="100" alt="logo" />
@@ -17,7 +15,6 @@ export default function Home() {
         <Link href={'/cart'} className="carts">
           &#x1F6D2;
         </Link>
-        {isLoaded && isSignedIn ? (<UserButton />) : (<SignInButton />)}
       </div>
 
 
