@@ -19,7 +19,7 @@ export default function Cart() {
           <h3>Total Amount: ₹<span id="totalAmount">0</span></h3>
           <button>Clear Cart</button>
           <Link href={'/'}>
-            <button onclick="window.location.href='index.html';">Continue Shopping</button>
+            <button>Continue Shopping</button>
           </Link>
         </div>
       </div>

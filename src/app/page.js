@@ -40,7 +40,7 @@ export default function Home() {
             <Image src="/img/cetrizen.jpeg" alt="Cetrzen" width={200} height={200} />
             <h3>Cetrzen</h3>
             <p> ₹15.00</p>
-            <button className="add-to-cart" onclick="addToCart('Cetrzen', 15)">Add to Cart</button>
+            <button className="add-to-cart" >Add to Cart</button>
             <button >Buy Now</button>
           </div>
           <div className="medicine-card">
@@ -54,21 +54,21 @@ export default function Home() {
             <Image src="/img/ibuprofen.jpeg" alt="Ibuprofen" width={200} height={200} />
             <h3>Ibuprofen</h3>
             <p> ₹25.00</p>
-            <button className="add-to-cart" onclick="addToCart('Ibuprofen', 25)">Add to Cart</button>
+            <button className="add-to-cart" >Add to Cart</button>
             <button >Buy Now</button>
           </div>
           <div className="medicine-card">
             <Image src="/img/lasartan 50mg.jpeg" alt="Lasartan 50mg" width={200} height={200} />
             <h3>Lasartan 50mg</h3>
             <p> ₹30.00</p>
-            <button className="add-to-cart" onclick="addToCart('Lasartan 50mg', 30)">Add to Cart</button>
+            <button className="add-to-cart" >Add to Cart</button>
             <button >Buy Now</button>
           </div>
           <div className="medicine-card">
             <Image src="/img/paracetamol.jpeg" alt="Paracetamol" width={200} height={200} />
             <h3>Paracetamol</h3>
             <p> ₹7.00</p>
-            <button className="add-to-cart" onclick="addToCart('Paracetamol', 7)">Add to Cart</button>
+            <button className="add-to-cart" >Add to Cart</button>
             <button >Buy Now</button>
           </div>
         </div>
