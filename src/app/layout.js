@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { WixClientContextProvider } from "@/contexts/WixContext";
 
 
 const geistSans = localFont({
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <WixClientContextProvider>
+          {children}
+        </WixClientContextProvider>
       </body>
     </html>
   );

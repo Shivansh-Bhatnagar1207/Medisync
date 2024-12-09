@@ -1,11 +1,23 @@
 'use client'
 
+import { WixClientContext } from "@/contexts/WixContext";
 import Image from "next/image";
 import Link from "next/link";
+import { useContext, useEffect } from "react";
 export default function Home() {
+  const wixClient = useContext(WixClientContext)
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const res = await wixClient.products.queryProducts().find()
+
+    }
+    getProducts()
+  }, [wixClient])
+
   return (
     <>
-      <Image id="logo" src="/medlogo.png" width="100" height="100" alt="logo" />
+      <Image id="logo" src="/medlogo.png" width="100" height="100" alt="logo" priority={false} />
       <div className="search-bar">
         <input type="text" id="search" placeholder="Search for medicines..." />
         <button >Search</button>
