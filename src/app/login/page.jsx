@@ -60,28 +60,51 @@ export default function Login() {
             required
           />
         ) : null}
-        <button >
-         {buttonTitle}
-        </button>
+
+        {mode === "LOGIN" && (
+          <div
+            id="cursor"
+            onClick={() => {
+              setMode("RESET_PASSWORD");
+            }}
+          >
+            Forgot Password
+          </div>
+        )}
+
+        <button>{buttonTitle}</button>
+
         {error && <div>{error}</div>}
         {message && <div>{message}</div>}
 
         {mode === "LOGIN" && (
           <div
+            id="cursor"
             onClick={() => {
-              setMode("REGISTRATION");
+              setMode("REGISTER");
             }}
           >
             {"Don't"} have an account?
           </div>
         )}
-        {mode === "REGISTRATION" && (
+        {mode === "REGISTER" && (
           <div
+            id="cursor"
             onClick={() => {
               setMode("LOGIN");
             }}
           >
             {"Don't"} have an account?
+          </div>
+        )}
+        {mode === "RESET_PASSWORD" && (
+          <div
+            id="cursor"
+            onClick={() => {
+              setMode("LOGIN");
+            }}
+          >
+            Remember Password
           </div>
         )}
       </form>

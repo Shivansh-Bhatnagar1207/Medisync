@@ -1,16 +1,24 @@
-// 'use client'
 
-// import { useWixClient } from "@/hooks/WixClient";
+
 import { wixClientServer } from "@/lib/wixClientServer";
 import Image from "next/image";
 import Link from "next/link";
 import ProductList from "./components/ProductList";
 import { Suspense } from "react";
+import { CgProfile } from "react-icons/cg";
 // import { useContext, useEffect } from "react";
 export default async function Home() {
-  // const wixClient = await wixClientServer(); // Await the wixClientServer function
-  // const res = await wixClient.products.queryProducts().find()
+  const wixClient = await wixClientServer(); // Await the wixClientServer function
+  const res = await wixClient.products.queryProducts().find()
 
+
+  const login = () => {
+    const loginRequestData = wixClient.auth.generateOAuthData(
+      "http://localhost:3000",
+    )
+    console.log(loginRequestData);
+
+  }
   return (
     <>
       <Image id="logo" src="/medlogo.png" width="100" height="100" alt="logo" priority={false} />
@@ -23,6 +31,8 @@ export default async function Home() {
         <Link href={'/cart'} className="carts">
           &#x1F6D2;
         </Link>
+
+        <button><CgProfile /></button>
       </div>
 
 

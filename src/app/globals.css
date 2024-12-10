@@ -14,10 +14,8 @@ a:visited {
 
 .carts {
   cursor: pointer;
-font-size: 36px;
+  font-size: 36px;
 }
-
-
 
 .dashboard-bg {
   background-image: url("/homepage.png") no-repeat center center fixed;
@@ -187,6 +185,10 @@ select {
 .signup-btn:hover {
   background-color: #3d76d9;
   transform: scale(1.13);
+}
+
+#cursor {
+  cursor: pointer;
 }
 
 .medicine-list {
